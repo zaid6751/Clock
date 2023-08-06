@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clock{
+          width: 150px;
+          height: 30px;
+          border: 2px solid green;
+          text-align: center;
+          padding-top: 20px;
+          padding-bottom: 10px;
+          padding-left: 50px;
+          padding-right: 50px;
+        }
+        h4{
+          font-weight: 500;
+          font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          text-align: end;
+          margin-top: 600px;
+        }
+    </style>
+</head>
+<body>
+  <center><div id="clock" onload="currentTime()"></div></center>
+  <h4>creater zaid shaikh</h4>
+
+    <script>
+       function currentTime(){
+        let date = new Date();
+        let hour = date.getHours();
+        let min = date.getMinutes();
+        let sec = date.getSeconds();
+        let session = "PM";
+      
+
+       if(hour>12){
+         session ="AM";
+       }
+
+       hour = (hour < 10)? "0" +  hour : hour;
+       min = (min < 10)? "0" +  min : min;
+       sec = (sec < 10)? "0" +  sec : sec;
+
+       let time = hour + ":" + min + ":" + sec + " " + session;
+
+       document.getElementById("clock").innerHTML=time;
+       let t =setTimeout(function(){ currentTime() }, 1000);
+    }
+    currentTime();
+    </script>
+
+</body>
+</html>
