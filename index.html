@@ -33,11 +33,11 @@
         let hour = date.getHours();
         let min = date.getMinutes();
         let sec = date.getSeconds();
-        let session = "AM";
+        let session = "PM";
       
 
        if(hour>12){
-         session ="PM";
+         session ="AM";
        }
 
        hour = (hour < 10)? "0" +  hour : hour;
